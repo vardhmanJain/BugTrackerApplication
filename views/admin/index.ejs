@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <h1>welcome admin!</h1>
+    <hr>
+    <div class="container">
+        <div class="new">
+            <h2>new bugs</h2>
+            <ul>
+                <% newbugs.forEach((bug)=>{ %>
+                    <li><a href="/admin/bug/<%=bug._id%>"><%=bug._id%></a></li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="unassigned">
+            <h2>assigned</h2>
+            <ul>
+                <% assigned.forEach((bug)=>{ %>
+                    <li><a href="#"><%=bug._id%></a></li>
+                <%})%>
+            </ul>
+        </div>
+        <div class="assigned">
+            <h2>open</h2>
+            <ul>
+                <% open.forEach((bug)=>{ %>
+                    <li><a href="#"><%=bug._id%></a></li>
+                <%})%>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <a href="/admin/team/new">create new team</a>
+</body>
+</html>

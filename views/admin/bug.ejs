@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="info">
+        <div class="bugdescription"><%=bug.description%></div>
+    </div>
+    <form action="/admin/bug/<%=bug._id%>" method="post">
+        <label>assign: <input type="radio" name="status" value="assigned"></label>
+        <label>reject: <input type="radio" name="status" value="rejected"></label>
+        <label>select team: <select name="teamid">
+            <%teams.forEach((team)=>{%>
+                <option value="<%=team._id%>"><%=team.username%></option>
+            <%})%>
+        </select></label>
+        <input type="submit" value="save changes">
+    </form>
+</body>
+</html>

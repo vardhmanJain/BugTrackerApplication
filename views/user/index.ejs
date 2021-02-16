@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>welcome,<%= user.username %></h1>
-    <a href="/bug/new/<%=user._id%>">submit a bug</a>
+    <a href="/bug/new">submit a bug</a>
     <div>
         <h2>history</h2>
         <% user.bugsreported.forEach((bug)=>{ %>
@@ -16,6 +16,8 @@
         <!-- <% for(let bugsreported in user){ %>
             <a href="/bug/<%=bugsreported%>"><%= bugsreported%></a>
         <% } %> -->
+        <hr>
+        <a href="/logout">logout</a>
         
         
     </div>
